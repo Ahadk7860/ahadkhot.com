@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahad Khot</title>
+<meta name="description" content="Ahad Khot — consultant at Bain & Company working on AI strategy, product manager, and builder of Peppin. UC Berkeley.">
+<link rel="canonical" href="https://ahadkhot.com/">
+<meta property="og:title" content="Ahad Khot">
+<meta property="og:description" content="AI strategy at Bain. Product at Tesla, Uber, Amazon. Building Peppin.">
+<meta property="og:url" content="https://ahadkhot.com/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111110" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f3ee;
+    --surface: #efebe4;
+    --ink: #1a1917;
+    --muted: #6b675f;
+    --faint: #a8a299;
+    --rule: #ddd7cd;
+    --accent: #b4462b;
+    --serif: "Instrument Serif", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111110;
+      --surface: #1a1a18;
+      --ink: #ece8e1;
+      --muted: #9a958c;
+      --faint: #5e5a54;
+      --rule: #2a2926;
+      --accent: #e0765a;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 16px/1.6 var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration-color: var(--faint); text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color .15s, text-decoration-color .15s; }
+  a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  header.top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 28px 0; font-size: 14px; color: var(--muted);
+  }
+  header.top .mark { font-family: var(--serif); font-size: 22px; color: var(--ink); text-decoration: none; }
+  header.top nav { display: flex; gap: 22px; }
+  header.top nav a { text-decoration: none; }
+
+  .hero { padding: 96px 0 72px; }
+  .hero h1 {
+    font: 400 clamp(48px, 9vw, 84px)/1.0 var(--serif);
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em { color: var(--accent); }
+  .hero p.lede {
+    margin-top: 28px; max-width: 34em;
+    font-size: 19px; line-height: 1.55; color: var(--muted);
+  }
+  .hero p.lede strong { color: var(--ink); font-weight: 500; }
+  .status {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-top: 32px; font-size: 14px; color: var(--muted);
+  }
+  .status::before {
+    content: ""; width: 8px; height: 8px; border-radius: 50%;
+    background: #3f9b5e; box-shadow: 0 0 0 4px color-mix(in srgb, #3f9b5e 18%, transparent);
+  }
+
+  section { padding: 56px 0; border-top: 1px solid var(--rule); }
+  section > h2 {
+    font: 500 12px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase;
+    color: var(--faint); margin-bottom: 32px;
+  }
+
+  .row {
+    display: grid; grid-template-columns: 150px 1fr; gap: 8px 32px;
+    padding: 18px 0;
+  }
+  .row + .row { border-top: 1px dashed var(--rule); }
+  .row .when { font-size: 14px; color: var(--faint); padding-top: 3px; font-variant-numeric: tabular-nums; }
+  .row h3 { font: 400 26px/1.2 var(--serif); }
+  .row h3 span { font-family: var(--sans); font-size: 14px; color: var(--muted); margin-left: 6px; }
+  .row p { margin-top: 6px; color: var(--muted); font-size: 15.5px; }
+
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .card {
+    background: var(--surface); border-radius: 14px; padding: 24px;
+    text-decoration: none; display: block;
+    transition: transform .2s ease, background .2s;
+  }
+  a.card:hover { transform: translateY(-2px); color: inherit; }
+  .card .k { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+  .card h3 { font: 400 28px/1.15 var(--serif); margin-top: 10px; }
+  .card p { color: var(--muted); font-size: 15px; margin-top: 8px; }
+  .card .go { margin-top: 14px; font-size: 14px; color: var(--accent); }
+
+  ul.awards { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 32px; }
+  ul.awards li { display: flex; gap: 12px; font-size: 15.5px; }
+  ul.awards li b { font: 400 18px/1.4 var(--serif); color: var(--accent); min-width: 28px; }
+
+  .about p { font-size: 17px; color: var(--muted); max-width: 36em; }
+  .about p + p { margin-top: 16px; }
+  .about strong { color: var(--ink); font-weight: 500; }
+
+  .contact h2.big {
+    font: 400 clamp(36px, 6vw, 56px)/1.05 var(--serif);
+    letter-spacing: normal; text-transform: none; color: var(--ink); margin-bottom: 20px;
+  }
+  .contact p { color: var(--muted); font-size: 17px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .links a {
+    text-decoration: none; font-size: 15px;
+    border: 1px solid var(--rule); border-radius: 999px; padding: 9px 18px;
+  }
+  .links a:hover { border-color: var(--accent); }
+
+  footer { padding: 40px 0 56px; font-size: 13px; color: var(--faint); display: flex; justify-content: space-between; }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 0 16px; }
+    header.top nav { gap: 16px; }
+    header.top nav a.hide-sm { display: none; }
+    .hero { padding: 56px 0 48px; }
+    .hero p.lede { font-size: 17px; }
+    .row { grid-template-columns: 1fr; gap: 2px; }
+    .cards, ul.awards { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 6px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="/">Ahad Khot</a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#building" class="hide-sm">Building</a>
+      <a href="#about" class="hide-sm">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Strategy, product,<br>and things I <em>build</em>.</h1>
+      <p class="lede">I'm Ahad. I help <strong>Fortune 500 leadership teams figure out what to do with AI</strong> at Bain &amp; Company, and I've shipped product at Tesla, Uber, Amazon, and Cisco. On nights and weekends I build <strong>Peppin</strong>. UC Berkeley, Business &amp; Economics.</p>
+      <div class="status">Associate Consultant at Bain &amp; Company, San Francisco</div>
+    </div>
+
+    <section id="work">
+      <h2>Work</h2>
+
+      <div class="row">
+        <div class="when">Now</div>
+        <div>
+          <h3>Bain &amp; Company <span>Associate Consultant</span></h3>
+          <p>Working with C-suite leaders to define AI strategy, find the use cases worth funding, and turn them into implementation plans that ship.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="when">2026</div>
+        <div>
+          <h3>Amazon <span>Product Manager</span></h3>
+          <p>Built a multi-KPI benchmarking index across 10+ satellite and telecom providers and a partner segmentation framework used in cross-functional business reviews. Traced billing anomalies across enterprise clients to root causes, cutting escalations 15%.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="when">2025</div>
+        <div>
+          <h3>Bain &amp; Company <span>Technology Group</span></h3>
+          <p>Part of a $200M+ cost transformation that gave a $4B+ data storage company a 2+ year lifeline. Owned a $40M+ reduction target and the geo-footprint strategy behind it.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="when">2024</div>
+        <div>
+          <h3>Tesla <span>Product Management</span></h3>
+          <p>Led 5+ engineers shipping 10+ features on Tesla's in-house ERP, used by 140K+ employees. Drove the LLM integration for AI ticket suggestions, saving 10K+ user hours, and cut error-ticket sources by 30%.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="when">2024</div>
+        <div>
+          <h3>Cisco <span>Product Manager</span></h3>
+          <p>Led a 7-person team on IoT product strategy for US campuses, built on 40+ expert calls and 1M+ user activity datapoints.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="when">2023</div>
+        <div>
+          <h3>Uber <span>Product Manager</span></h3>
+          <p>Helped take Uber for Teens from idea to launch inside the Family suite. It beat engagement targets with 50K+ users and coverage in TechCrunch, WSJ, and The Verge.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="building">
+      <h2>Building</h2>
+      <div class="cards">
+        <a class="card" href="https://peppin.ai" target="_blank" rel="noopener">
+          <div class="k">Founder</div>
+          <h3>Peppin</h3>
+          <p>A habit tracker and accountability companion that keeps you honest with yourself.</p>
+          <div class="go">peppin.ai &rarr;</div>
+        </a>
+        <div class="card">
+          <div class="k">Founder &middot; 2022–2026</div>
+          <h3>Berkeley PM Association</h3>
+          <p>Started a product consulting club that ran 10+ projects with Microsoft, Salesforce, DoorDash, Google, and others, and raised $300K+.</p>
+        </div>
+        <div class="card">
+          <div class="k">Instructor</div>
+          <h3>Teaching</h3>
+          <p>Taught three courses at Berkeley's entrepreneurship center: Product Management, Advanced Product Management, and AI Startups.</p>
+        </div>
+        <div class="card">
+          <div class="k">Consulting</div>
+          <h3>Berkeley Strategy Group</h3>
+          <p>AI strategy and implementation work for growing companies, run with a small team out of Berkeley.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <h2>Wins</h2>
+      <ul class="awards">
+        <li><b>1st</b> Uber Global Hackathon</li>
+        <li><b>1st</b> Microsoft National Business Challenge</li>
+        <li><b>1st</b> Lucid Motors Product Challenge</li>
+        <li><b>1st</b> Morgan Stanley Case Competition</li>
+        <li><b>1st</b> Y Combinator Nexus Case Competition</li>
+        <li><b>2&times;</b> Youth chess champion</li>
+      </ul>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>I studied <strong>Business Administration and Economics at UC Berkeley</strong> with a focus in data science. I like problems that sit between the spreadsheet and the product: deciding what's worth building, then actually building it.</p>
+      <p>Outside of work: career goalkeeper, 10+ national parks hiked, 20+ cuisines cooked badly then well, and 40+ countries visited.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 class="big">Say hello.</h2>
+      <p>Always happy to talk about AI strategy, product, or something you're building.</p>
+      <div class="links">
+        <a href="mailto:ahad.khot@berkeley.edu">ahad.khot@berkeley.edu</a>
+        <a href="https://www.linkedin.com/in/ahadkhot" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Ahadk7860" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>&copy; <span id="y">2026</span> Ahad Khot</span>
+    <span>Berkeley &amp; San Francisco</span>
+  </footer>
+</div>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
