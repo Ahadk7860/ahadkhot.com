@@ -60,98 +60,87 @@
   .bar nav a:hover { color: var(--blue); }
   .bar .clock { color: var(--muted); }
 
-  /* ---------- Hero ---------- */
-  .hero { padding-top: 28px; }
-  .meta-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; color: var(--ink-2); padding-bottom: 18px; border-bottom: 1px solid var(--ink); }
+  /* ---------- Lead ---------- */
+  .lead-wrap { padding-top: 22px; }
+  .meta-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; color: var(--ink-2); padding-bottom: 14px; border-bottom: 1px solid var(--ink); }
   .meta-row span b { color: var(--ink); font-weight: 500; }
   .live::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #18b85c; margin-right: 8px; vertical-align: 1px; box-shadow: 0 0 0 3px rgba(24,184,92,.18); }
+  .lead { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 20px; align-items: end; padding: 26px 0 30px; }
   h1.name {
-    font: 700 clamp(64px, 17.2vw, 264px)/.8 var(--sans); letter-spacing: -0.065em;
-    margin: clamp(22px, 3vw, 40px) 0 0 -0.04em; white-space: nowrap;
+    grid-column: 1 / span 6;
+    font: 700 clamp(56px, 8.4vw, 132px)/.82 var(--sans); letter-spacing: -0.06em;
+    margin-left: -0.035em; white-space: nowrap;
   }
   h1.name span { color: var(--blue); }
-  .intro { padding: clamp(32px, 5vw, 64px) 0 clamp(40px, 6vw, 88px); align-items: end; }
-  .intro p { grid-column: 1 / span 7; font: 500 clamp(22px, 2.35vw, 34px)/1.22 var(--sans); letter-spacing: -0.025em; }
-  .intro p em { font-style: normal; color: var(--blue); }
-  .intro p .dim { color: var(--muted); }
-  .intro .cta { grid-column: 9 / span 4; display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
+  .lead-r { grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 18px; padding-bottom: 4px; }
+  .lead-r p { font: 500 clamp(18px, 1.55vw, 23px)/1.3 var(--sans); letter-spacing: -0.02em; }
+  .lead-r p em { font-style: normal; color: var(--blue); }
+  .lead-r p .dim { color: var(--muted); }
+  .cta { display: flex; gap: 10px; flex-wrap: wrap; }
   .btn {
-    display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 20px;
-    border: 1px solid var(--ink); font-weight: 500; transition: background .2s, color .2s, border-color .2s;
+    display: inline-flex; align-items: center; gap: 10px; height: 42px; padding: 0 18px;
+    border: 1px solid var(--ink); font-weight: 500; font-size: 15px; transition: background .2s, color .2s, border-color .2s;
   }
   .btn.solid { background: var(--blue); border-color: var(--blue); color: #fff; }
   .btn:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
   .btn .arr { transition: transform .2s; }
   .btn:hover .arr { transform: translate(2px, -2px); }
 
-  .figures { grid-template-columns: repeat(4, minmax(0, 1fr)); display: grid; border-top: 1px solid var(--ink); }
-  .fig { padding: 22px 20px 30px 0; border-right: 1px solid var(--line); }
-  .fig + .fig { padding-left: 20px; }
-  .fig:last-child { border-right: 0; }
-  .fig b { display: block; font: 600 clamp(44px, 5.6vw, 88px)/.9 var(--sans); letter-spacing: -0.05em; }
-  .fig b sup { font-size: .42em; vertical-align: top; position: relative; top: .14em; color: var(--blue); margin-left: .04em; letter-spacing: 0; }
-  .fig p { margin-top: 14px; color: var(--ink-2); max-width: 22ch; font-size: 15px; }
-
   /* ---------- Sections ---------- */
-  section.wrap { padding-top: clamp(72px, 9vw, 140px); }
-  .sec-head { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 20px; align-items: end; padding-bottom: 20px; border-bottom: 1px solid var(--ink); margin-bottom: clamp(28px, 4vw, 56px); }
-  .sec-head .no { grid-column: 1 / span 2; color: var(--blue); }
-  .sec-head h2 { grid-column: 3 / span 6; font: 600 clamp(40px, 5.4vw, 84px)/.92 var(--sans); letter-spacing: -0.05em; }
-  .sec-head p { grid-column: 9 / span 4; color: var(--ink-2); font-size: 15px; }
+  section.wrap { padding-top: clamp(56px, 6vw, 96px); }
+  .sec-head { display: flex; align-items: baseline; gap: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--ink); margin-bottom: clamp(22px, 2.6vw, 36px); flex-wrap: wrap; }
+  .sec-head .no { color: var(--blue); }
+  .sec-head h2 { font: 600 clamp(32px, 3.4vw, 52px)/.95 var(--sans); letter-spacing: -0.045em; }
+  .sec-head p { margin-left: auto; color: var(--ink-2); font-size: 15px; max-width: 46ch; text-align: right; }
+  #ventures.wrap { padding-top: 0; }
+  #ventures .sec-head { border-top: 0; }
+  .sec-head.slim { padding: 0 0 12px; margin-bottom: 20px; border-bottom: 1px solid var(--line); }
+  .sec-head.slim h2 { font: 400 12px/1.4 var(--mono); letter-spacing: .02em; text-transform: uppercase; color: var(--ink); }
+  .sec-head.slim p { font-size: 13px; color: var(--muted); max-width: none; }
 
-  /* ---------- Ventures ---------- */
-  .venture { padding: clamp(28px, 3.5vw, 48px) 0; border-bottom: 1px solid var(--line); align-items: start; }
-  .venture:last-child { border-bottom: 0; }
-  .v-text { grid-column: 1 / span 5; position: sticky; top: 84px; }
-  .v-media { grid-column: 6 / span 7; }
-  .v-tag { display: flex; gap: 14px; align-items: center; color: var(--muted); }
+  /* ---------- Venture cards ---------- */
+  .pjs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; row-gap: 44px; }
+  .pj { display: flex; flex-direction: column; min-width: 0; }
+  .pj .stage { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+  .pj:hover .stage { transform: translateY(-4px); }
+  .pj-body { padding-top: 18px; }
+  .pj-top { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .pj-top h3 { font: 600 clamp(32px, 3vw, 46px)/.95 var(--sans); letter-spacing: -0.05em; }
+  .pj-top h3 a { display: inline-flex; align-items: flex-start; gap: 6px; }
+  .pj-top h3 a::after { content: "↗"; font-size: .42em; font-weight: 500; color: var(--blue); margin-top: .18em; transition: transform .2s; }
+  .pj-top h3 a:hover::after { transform: translate(3px, -3px); }
+  .v-tag { display: flex; gap: 12px; align-items: center; color: var(--muted); }
   .v-tag .st { color: var(--blue); border: 1px solid currentColor; padding: 3px 7px; }
-  .v-text h3 { margin-top: 18px; font: 600 clamp(44px, 4.6vw, 72px)/.9 var(--sans); letter-spacing: -0.055em; }
-  .v-text h3 a { display: inline-flex; align-items: flex-start; gap: 8px; }
-  .v-text h3 a::after { content: "↗"; font-size: .38em; font-weight: 500; color: var(--blue); margin-top: .2em; transition: transform .2s; }
-  .v-text h3 a:hover::after { transform: translate(3px, -3px); }
-  .v-text .one { margin-top: 18px; font: 500 20px/1.35 var(--sans); letter-spacing: -0.015em; max-width: 30ch; }
-  .v-text ul { list-style: none; margin-top: 20px; border-top: 1px solid var(--line); }
-  .v-text li { padding: 10px 0; border-bottom: 1px solid var(--line); color: var(--ink-2); font-size: 15px; display: grid; grid-template-columns: 34px 1fr; }
-  .v-text li::before { content: attr(data-n); font: 400 11px/2 var(--mono); color: var(--muted); }
-  .v-text li a { color: var(--blue); }
-  .kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 28px; }
+  .pj .one { margin-top: 12px; font: 500 18px/1.35 var(--sans); letter-spacing: -0.015em; max-width: 44ch; }
+  .pj ul { list-style: none; margin-top: 14px; border-top: 1px solid var(--line); }
+  .pj li { padding: 8px 0; border-bottom: 1px solid var(--line); color: var(--ink-2); font-size: 14.5px; display: grid; grid-template-columns: 30px 1fr; }
+  .pj li::before { content: attr(data-n); font: 400 11px/2 var(--mono); color: var(--muted); }
+  .pj li a { color: var(--blue); }
+  .kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
   .kpis div { padding-right: 10px; }
-  .kpis b { display: block; font: 600 clamp(26px, 2.4vw, 36px)/1 var(--sans); letter-spacing: -0.04em; color: var(--blue); }
-  .kpis span { display: block; margin-top: 8px; font: 400 11px/1.35 var(--mono); text-transform: uppercase; color: var(--muted); }
+  .kpis b { display: block; font: 600 clamp(24px, 2.1vw, 32px)/1 var(--sans); letter-spacing: -0.04em; color: var(--blue); }
+  .kpis span { display: block; margin-top: 7px; font: 400 11px/1.35 var(--mono); text-transform: uppercase; color: var(--muted); }
 
-  .stage { position: relative; overflow: hidden; aspect-ratio: 7 / 5.2; display: flex; align-items: center; justify-content: center; }
+  .stage { position: relative; overflow: hidden; aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center; }
   .stage.blue { background: var(--blue); }
   .stage.grey { background: #e7e7e2; }
   .stage.black { background: #0b0b0c; }
   .stage.cream { background: #f3eee6; }
-  .stage .corner { position: absolute; left: 18px; top: 16px; right: 18px; display: flex; justify-content: space-between; color: rgba(255,255,255,.7); z-index: 2; }
+  .stage .corner { position: absolute; left: 16px; top: 14px; right: 16px; display: flex; justify-content: space-between; color: rgba(255,255,255,.7); z-index: 2; }
   .stage.grey .corner { color: var(--muted); }
-  .phones { display: flex; gap: 4%; height: 80%; align-items: center; }
-  .phones img { height: 100%; width: auto; aspect-ratio: 1206 / 2622; object-fit: cover; border-radius: 9% / 4.2%; border: 4px solid #fff; box-shadow: 0 30px 60px -20px rgba(0,0,30,.55); }
+  .phones { display: flex; gap: 5%; height: 78%; align-items: center; margin-top: 4%; }
+  .phones img { height: 100%; width: auto; aspect-ratio: 1206 / 2622; object-fit: cover; border-radius: 9% / 4.2%; border: 3px solid #fff; box-shadow: 0 26px 50px -18px rgba(0,0,30,.55); }
   .phones img:nth-child(2) { transform: translateY(6%); }
-  .shot { width: 88%; border-radius: 6px; overflow: hidden; box-shadow: 0 30px 70px -25px rgba(0,0,0,.4); background: #fff; }
-  .shot .chrome { height: 24px; display: flex; gap: 6px; align-items: center; padding: 0 10px; background: #fafaf8; border-bottom: 1px solid #e6e6e1; }
-  .shot .chrome i { width: 7px; height: 7px; border-radius: 50%; background: #d4d4ce; }
-  .stage.black .shot { width: auto; height: 84%; aspect-ratio: 4 / 3; background: #111; box-shadow: none; }
+  .shot { width: 86%; margin-top: 4%; border-radius: 6px; overflow: hidden; box-shadow: 0 26px 60px -22px rgba(0,0,0,.4); background: #fff; }
+  .shot .chrome { height: 20px; display: flex; gap: 5px; align-items: center; padding: 0 9px; background: #fafaf8; border-bottom: 1px solid #e6e6e1; }
+  .shot .chrome i { width: 6px; height: 6px; border-radius: 50%; background: #d4d4ce; }
+  .stage.black .shot { width: auto; height: 80%; aspect-ratio: 4 / 3; background: #111; box-shadow: none; margin-top: 3%; }
   .stage.black .shot img { width: 100%; height: 100%; object-fit: cover; }
-  .stage.full { aspect-ratio: 1800 / 978; }
-  .stage.full img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
-  .stage.full:hover img { transform: scale(1.03); }
-  .stage.full .corner { color: rgba(11,11,12,.55); top: auto; bottom: 16px; }
-
-  .funnel { margin-top: 28px; border-top: 1px solid var(--line); }
-  .funnel .r { display: grid; grid-template-columns: 120px 1fr 70px; gap: 14px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--line); }
-  .funnel .r span { font: 400 11px/1 var(--mono); text-transform: uppercase; color: var(--ink-2); }
-  .funnel .bar-t { height: 14px; background: var(--blue-tint); }
-  .funnel .bar-t b { display: block; height: 100%; background: var(--blue); transform: scaleX(0); transform-origin: left; transition: transform 1.1s cubic-bezier(.2,.7,.2,1); }
-  .in .funnel .bar-t b { transform: scaleX(1); }
-  .funnel .r em { font: 600 20px/1 var(--sans); font-style: normal; text-align: right; letter-spacing: -0.03em; }
-  .funnel .r em small { font: 400 10px/1 var(--mono); color: var(--muted); margin-left: 4px; }
-  .note { margin-top: 10px; color: var(--muted); }
-
+  .stage.full img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 80% 50%; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+  .pj:hover .stage.full img { transform: scale(1.03); }
+  .stage.full .corner { color: rgba(11,11,12,.55); top: auto; bottom: 14px; }
   /* ---------- Experience ---------- */
-  .xp { border-top: 1px solid var(--ink); isolation: isolate; }
+  .xp { isolation: isolate; }
   .xp-row {
     display: grid; grid-template-columns: 2.6fr 2fr 1.6fr 4.6fr 2fr; gap: 20px; align-items: baseline;
     padding: 26px 0; border-bottom: 1px solid var(--line); position: relative;
@@ -226,10 +215,9 @@
   @media (max-width: 1080px) {
     .bar nav { display: none; }
     .meta-row { grid-template-columns: 1fr 1fr; row-gap: 8px; }
-    .intro p { grid-column: 1 / -1; }
-    .intro .cta { grid-column: 1 / -1; justify-content: flex-start; margin-top: 28px; }
-    .v-text { grid-column: 1 / -1; position: static; }
-    .v-media { grid-column: 1 / -1; margin-top: 28px; grid-row: 2; }
+    h1.name, .lead-r { grid-column: 1 / -1; }
+    .lead-r { margin-top: 22px; }
+    .pjs { grid-template-columns: 1fr; row-gap: 48px; }
     .xp-row { grid-template-columns: 1fr auto; row-gap: 10px; }
     .xp-row .co { grid-column: 1; }
     .xp-row .num { grid-column: 2; grid-row: 1 / span 2; }
@@ -239,22 +227,17 @@
     .score, .places { grid-column: 1 / -1; }
     .places { margin-top: 48px; }
     .card, .card.wide { grid-column: 1 / -1; }
-    .sec-head .no { grid-column: 1 / -1; margin-bottom: 14px; }
-    .sec-head h2 { grid-column: 1 / -1; }
-    .sec-head p { grid-column: 1 / -1; margin-top: 16px; }
+    .sec-head p { margin-left: 0; text-align: left; flex-basis: 100%; }
   }
   @media (max-width: 640px) {
     .grid { column-gap: 0; }
     .meta-row { grid-template-columns: 1fr; }
     .meta-row span:nth-child(n+3) { display: none; }
-    .figures { grid-template-columns: 1fr 1fr; }
-    .fig { padding: 18px 12px 22px 0 !important; border-bottom: 1px solid var(--line); }
-    .fig:nth-child(2n) { border-right: 0; padding-left: 12px !important; }
-    .fig:nth-child(2n+1) { padding-left: 0 !important; }
-    .kpis { grid-template-columns: 1fr 1fr; row-gap: 18px; }
-    .stage { aspect-ratio: 4 / 4.3; }
-    .stage.full { aspect-ratio: 1800 / 978; }
-    .funnel .r { grid-template-columns: 96px 1fr 60px; gap: 10px; }
+    .lead { padding: 20px 0 26px; }
+    .kpis { grid-template-columns: 1fr 1fr; row-gap: 16px; }
+    .stage { aspect-ratio: 4 / 3.4; }
+    .stage.full { aspect-ratio: 16 / 10; }
+    .pj-top { flex-direction: column-reverse; gap: 10px; }
     .xp-row .co { font-size: 28px; }
     .card.wide { padding: 22px; }
     .card .row4 { grid-template-columns: 1fr 1fr; }
@@ -287,144 +270,137 @@
 </header>
 
 <main id="top">
-  <div class="wrap hero">
+  <div class="wrap lead-wrap">
     <div class="meta-row mono">
       <span class="live"><b>Bain &amp; Company</b> · AI Strategy</span>
       <span>San Francisco Bay Area</span>
       <span>UC Berkeley · Haas · BS ’26</span>
-      <span>Index 2026 / Ed. 10</span>
+      <span>9 / 13 case competition wins</span>
     </div>
-    <h1 class="name">Ahad Khot<span>.</span></h1>
-
-    <div class="grid intro">
-      <p>I work where strategy meets product. <span class="dim">By day,</span> AI strategy for Fortune 500 leaders at Bain. <span class="dim">By night,</span> co-founder of <em>Peppin</em>, <em>Berkeley Strategy Group</em>, <em>Boi</em> and <em>Anthology</em>.</p>
-      <div class="cta">
-        <a class="btn solid" href="mailto:ahad.khot@berkeley.edu">Get in touch <span class="arr">↗</span></a>
-        <a class="btn" href="https://www.linkedin.com/in/ahad-khot/" target="_blank" rel="noopener">LinkedIn <span class="arr">↗</span></a>
+    <div class="lead">
+      <h1 class="name">Ahad Khot<span>.</span></h1>
+      <div class="lead-r">
+        <p>I work where strategy meets product. <span class="dim">By day,</span> AI strategy for Fortune 500 leaders at Bain. <span class="dim">By night,</span> co-founder of <em>Peppin</em>, <em>Berkeley Strategy Group</em>, <em>Boi</em> and <em>Anthology</em>.</p>
+        <div class="cta">
+          <a class="btn solid" href="mailto:ahad.khot@berkeley.edu">Get in touch <span class="arr">↗</span></a>
+          <a class="btn" href="https://www.linkedin.com/in/ahad-khot/" target="_blank" rel="noopener">LinkedIn <span class="arr">↗</span></a>
+        </div>
       </div>
-    </div>
-
-    <div class="figures">
-      <div class="fig"><b>9</b><p>Case competition wins out of 13 entered at Berkeley Haas</p></div>
-      <div class="fig"><b>4</b><p>Companies co-founded, from consumer AI to a venture studio</p></div>
-      <div class="fig"><b>$200K<sup>+</sup></b><p>Revenue in Berkeley Strategy Group’s first 60 days</p></div>
-      <div class="fig"><b>140K<sup>+</sup></b><p>Tesla employees on the internal tools I shipped</p></div>
     </div>
   </div>
 
   <!-- ===================== Ventures ===================== -->
   <section id="ventures" class="wrap">
-    <div class="sec-head">
+    <div class="sec-head slim">
       <span class="no mono">§ 01</span>
       <h2>Ventures</h2>
-      <p>Four companies built with co-founders on nights and weekends. Real users, real revenue, shipped fast.</p>
+      <p>Four companies, built with co-founders on nights and weekends.</p>
     </div>
 
-    <article class="grid venture rv">
-      <div class="v-text">
-        <div class="v-tag mono"><span>V—01</span><span>Co-Founder</span><span class="st">Live</span></div>
-        <h3><a href="https://peppin.ai" target="_blank" rel="noopener">Peppin</a></h3>
-        <p class="one">A habit companion you text in iMessage. Log by message or photo; a penguin grows as you keep your streak.</p>
-        <ul>
-          <li data-n="01"><span>Live at <a href="https://peppin.ai" target="_blank" rel="noopener">peppin.ai</a> with real users, Stripe billing and meal-photo macros</span></li>
-          <li data-n="02"><span>Deterministic pre-classifier and safety canaries gate every LLM call</span></li>
-          <li data-n="03"><span>650 commits, 88 migrations and 200+ test files in 6 weeks</span></li>
-        </ul>
-        <div class="funnel">
-          <div class="r"><span>First message</span><div class="bar-t"><b style="width:100%"></b></div><em>37</em></div>
-          <div class="r"><span>Replied again</span><div class="bar-t"><b style="width:81%;transition-delay:.08s"></b></div><em>30<small>81%</small></em></div>
-          <div class="r"><span>Set a habit</span><div class="bar-t"><b style="width:65%;transition-delay:.16s"></b></div><em>24<small>65%</small></em></div>
-          <div class="r"><span>Back on day 2</span><div class="bar-t"><b style="width:35%;transition-delay:.24s"></b></div><em>13<small>35%</small></em></div>
-        </div>
-        <p class="note mono">Ad cohort Sep 18–25 · 521 conversations logged · 9 paying</p>
-      </div>
-      <div class="v-media">
-        <div class="stage blue">
-          <div class="corner mono"><span>Peppin / iMessage</span><span>Photo logging · Check-in</span></div>
+    <div class="pjs">
+      <article class="pj">
+        <a class="stage blue" href="https://peppin.ai" target="_blank" rel="noopener" aria-label="Open peppin.ai">
+          <div class="corner mono"><span>Peppin / iMessage</span><span>peppin.ai ↗</span></div>
           <div class="phones">
-            <img src="/assets/peppin/01.webp" alt="Peppin in iMessage: a run is logged, then an acai bowl photo comes back with protein, fiber and calories" loading="lazy">
-            <img src="/assets/peppin/02.webp" alt="Peppin in iMessage: a workout logged, then a wrap photo estimated at about 39g protein" loading="lazy">
+            <img src="/assets/peppin/01.webp" alt="Peppin in iMessage: a run is logged, then an acai bowl photo comes back with protein, fiber and calories">
+            <img src="/assets/peppin/02.webp" alt="Peppin in iMessage: a workout logged, then a wrap photo estimated at about 39g protein">
+          </div>
+        </a>
+        <div class="pj-body">
+          <div class="pj-top">
+            <h3><a href="https://peppin.ai" target="_blank" rel="noopener">Peppin</a></h3>
+            <div class="v-tag mono"><span>V—01</span><span>Co-Founder</span><span class="st">Live</span></div>
+          </div>
+          <p class="one">A habit companion you text in iMessage. Log by message or photo; a penguin grows as you keep your streak.</p>
+          <ul>
+            <li data-n="01"><span>Real users, Stripe billing and meal-photo macros</span></li>
+            <li data-n="02"><span>Deterministic pre-classifier and safety canaries gate every LLM call</span></li>
+            <li data-n="03"><span>650 commits, 88 migrations and 200+ test files in 6 weeks</span></li>
+          </ul>
+          <div class="kpis">
+            <div><b>521</b><span>Conversations logged</span></div>
+            <div><b>81%</b><span>Replied again</span></div>
+            <div><b>65%</b><span>Set a habit</span></div>
+            <div><b>9</b><span>Paying</span></div>
           </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <article class="grid venture rv">
-      <div class="v-text">
-        <div class="v-tag mono"><span>V—02</span><span>Co-Founder</span></div>
-        <h3>Berkeley Strategy Group</h3>
-        <p class="one">A strategy consultancy specializing in AI strategy and voice of the customer.</p>
-        <ul>
-          <li data-n="01"><span>50+ client relationships owned end to end</span></li>
-          <li data-n="02"><span>100+ client intros with F500 VPs and C-suite</span></li>
-          <li data-n="03"><span>Custom CRM to run the pipeline · clients include Amazon, Tesla, Uber and Rackspace</span></li>
-        </ul>
-        <div class="kpis">
-          <div><b>$200K+</b><span>First 60 days</span></div>
-          <div><b>5+</b><span>Enterprise deals</span></div>
-          <div><b>300+</b><span>Exec 1:1s</span></div>
-          <div><b>7</b><span>Team</span></div>
-        </div>
-      </div>
-      <div class="v-media">
+      <article class="pj">
         <div class="stage grey">
           <div class="corner mono"><span>BSG CRM</span><span>Pipeline · names blurred</span></div>
-          <div class="shot"><div class="chrome"><i></i><i></i><i></i></div><img src="/assets/bsg/01.webp" alt="BSG CRM pipeline board with account names blurred" loading="lazy"></div>
+          <div class="shot"><div class="chrome"><i></i><i></i><i></i></div><img src="/assets/bsg/01.webp" alt="BSG CRM pipeline board with account names blurred"></div>
         </div>
-      </div>
-    </article>
+        <div class="pj-body">
+          <div class="pj-top">
+            <h3>Berkeley Strategy Group</h3>
+            <div class="v-tag mono"><span>V—02</span><span>Co-Founder</span></div>
+          </div>
+          <p class="one">A strategy consultancy specializing in AI strategy and voice of the customer.</p>
+          <ul>
+            <li data-n="01"><span>50+ client relationships owned end to end</span></li>
+            <li data-n="02"><span>100+ client intros with F500 VPs and C-suite</span></li>
+            <li data-n="03"><span>Custom CRM runs the pipeline · Amazon, Tesla, Uber, Rackspace</span></li>
+          </ul>
+          <div class="kpis">
+            <div><b>$200K+</b><span>First 60 days</span></div>
+            <div><b>5+</b><span>Enterprise deals</span></div>
+            <div><b>300+</b><span>Exec 1:1s</span></div>
+            <div><b>7</b><span>Team</span></div>
+          </div>
+        </div>
+      </article>
 
-    <article class="grid venture rv">
-      <div class="v-text">
-        <div class="v-tag mono"><span>V—03</span><span>Co-Founder</span><span class="st">Prototype</span></div>
-        <h3>Boi</h3>
-        <p class="one">An AI assistant inside iMessage that reads the room, so you always know who is waiting on you.</p>
-        <ul>
-          <li data-n="01"><span>Texts you who is waiting on a reply, with two drafts in your voice</span></li>
-          <li data-n="02"><span>Notarized Mac app reads iMessage read-only; uploads summaries, never messages</span></li>
-          <li data-n="03"><span>14-tool agent loop on Fastify and Postgres; closed beta with real testers</span></li>
-        </ul>
-        <div class="kpis">
-          <div><b>487</b><span>Commits in 20 days</span></div>
-          <div><b>85K+</b><span>Lines of code</span></div>
-          <div><b>1,700</b><span>Tests</span></div>
-          <div><b>3</b><span>Languages</span></div>
-        </div>
-      </div>
-      <div class="v-media">
+      <article class="pj">
         <div class="stage black">
           <div class="corner mono"><span>Boi</span><span>Your year in messages</span></div>
           <div class="shot"><img src="/assets/boi/01.webp" alt="Boi share card: 38% of your 16 closest friendships went quiet this year" loading="lazy"></div>
         </div>
-      </div>
-    </article>
-
-    <article class="grid venture rv">
-      <div class="v-text">
-        <div class="v-tag mono"><span>V—04</span><span>Co-Founder</span><span class="st">Est. 2026</span></div>
-        <h3><a href="https://anthologyvm.com" target="_blank" rel="noopener">Anthology</a></h3>
-        <p class="one">A venture studio for San Francisco × Dubai, building ventures at the intersection of strategy and technology.</p>
-        <ul>
-          <li data-n="01"><span>Founded in 2026 across two of the world’s fastest-moving markets</span></li>
-          <li data-n="02"><span>Designed and shipped the studio’s brand and site at <a href="https://anthologyvm.com" target="_blank" rel="noopener">anthologyvm.com</a></span></li>
-        </ul>
-        <div class="kpis">
-          <div><b>SF</b><span>37.77° N 122.42° W</span></div>
-          <div><b>DXB</b><span>25.20° N 55.27° E</span></div>
-          <div><b>2026</b><span>Founded</span></div>
-          <div><b>×</b><span>Strategy and tech</span></div>
+        <div class="pj-body">
+          <div class="pj-top">
+            <h3>Boi</h3>
+            <div class="v-tag mono"><span>V—03</span><span>Co-Founder</span><span class="st">Prototype</span></div>
+          </div>
+          <p class="one">An AI assistant inside iMessage that reads the room, so you always know who is waiting on you.</p>
+          <ul>
+            <li data-n="01"><span>Texts you who is waiting on a reply, with two drafts in your voice</span></li>
+            <li data-n="02"><span>Notarized Mac app reads iMessage read-only; uploads summaries, never messages</span></li>
+            <li data-n="03"><span>14-tool agent loop on Fastify and Postgres; closed beta with real testers</span></li>
+          </ul>
+          <div class="kpis">
+            <div><b>487</b><span>Commits in 20 days</span></div>
+            <div><b>85K+</b><span>Lines of code</span></div>
+            <div><b>1,700</b><span>Tests</span></div>
+            <div><b>3</b><span>Languages</span></div>
+          </div>
         </div>
-      </div>
-      <div class="v-media">
-        <a class="stage full cream" href="https://anthologyvm.com" target="_blank" rel="noopener">
+      </article>
+
+      <article class="pj">
+        <a class="stage full cream" href="https://anthologyvm.com" target="_blank" rel="noopener" aria-label="Open anthologyvm.com">
           <img src="/assets/anthology/01.webp" alt="Anthology venture studio site: Golden Gate Bridge and Burj Khalifa sketches" loading="lazy">
           <div class="corner mono"><span>anthologyvm.com</span><span>Visit ↗</span></div>
         </a>
-      </div>
-    </article>
+        <div class="pj-body">
+          <div class="pj-top">
+            <h3><a href="https://anthologyvm.com" target="_blank" rel="noopener">Anthology</a></h3>
+            <div class="v-tag mono"><span>V—04</span><span>Co-Founder</span><span class="st">Est. 2026</span></div>
+          </div>
+          <p class="one">A venture studio for San Francisco × Dubai, building ventures at the intersection of strategy and technology.</p>
+          <ul>
+            <li data-n="01"><span>Founded in 2026 across two of the world’s fastest-moving markets</span></li>
+            <li data-n="02"><span>Designed and shipped the studio’s brand and site at <a href="https://anthologyvm.com" target="_blank" rel="noopener">anthologyvm.com</a></span></li>
+          </ul>
+          <div class="kpis">
+            <div><b>SF</b><span>37.77° N 122.42° W</span></div>
+            <div><b>DXB</b><span>25.20° N 55.27° E</span></div>
+            <div><b>2026</b><span>Founded</span></div>
+            <div><b>×</b><span>Strategy and tech</span></div>
+          </div>
+        </div>
+      </article>
+    </div>
   </section>
-
-  <!-- ===================== Experience ===================== -->
   <section id="experience" class="wrap">
     <div class="sec-head">
       <span class="no mono">§ 02</span>
